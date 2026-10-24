@@ -109,6 +109,11 @@ def main(argv=None):
     args = ap.parse_args(argv)
 
     t0 = time.time()
+    import shutil
+    for tool, what in (("tesseract", "screenshots"), ("pdftotext", "PDF documents")):
+        if not shutil.which(tool):
+            print(f"WARNING: '{tool}' not found - {what} will be skipped and results will differ. "
+                  f"Install it (Ubuntu: sudo apt install tesseract-ocr poppler-utils).")
     req_path = args.requests or os.path.join(args.dataset, "deletion_requests.csv")
     requests = load_csv(req_path)
     auditor, intents, usage, evidence = build(args.dataset, args.llm, args.vlm, extra_requests=requests)

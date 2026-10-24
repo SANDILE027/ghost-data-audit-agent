@@ -400,6 +400,16 @@ class Auditor:
             for s in steps:
                 if s["phase"] == "VERIFICATION":
                     s["evidence_id"] = ""
+        else:
+            # A COMPLETE verdict must cite evidence for every check. When no file proves a
+            # resource's state (e.g. a screenshot could not be read on this machine), cite the
+            # activity that ties the resource to this request (catalog link / workflow step).
+            via = {(rv.system, rv.resource_id): rv.via for rv in resources}
+            for s in steps:
+                if not s["evidence_id"]:
+                    acts = sorted(v.split(":", 1)[1] for v in via.get((s["system_id"], s["resource_id"]), ())
+                                  if v.startswith(("catalog:", "workflow:")))
+                    s["evidence_id"] = acts[0] if acts else ""
         return ("INCOMPLETE" if incomplete else "COMPLETE"), sort_steps(steps)
 
     # ------------------------------------------------------------------

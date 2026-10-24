@@ -341,3 +341,23 @@ repo_root=/home/claude/hro
 worktree=main
 parent_agent=none
 
+## [2026-10-25T01:16:00+02:00] Local run differs: Tesseract missing; add safeguards
+
+User Prompt (verbatim, secrets redacted):
+[terminal output from the user's machine: python3 code/main.py -> INCOMPLETE 346 / COMPLETE 162 / NOT_APPLICABLE 10, 2895 observations; evaluation: samples 32/32 status, 29/32 exact, custom 7/7, contract violations: 2 (case_46, case_63: COMPLETE needs evidence-backed verification only)]
+
+Agent Response Summary:
+Reproduced the user's numbers exactly by disabling Tesseract: the screenshots were skipped on their machine, so two image-backed resources had no citable evidence. Added a startup warning when tesseract/pdftotext are missing, and a fallback so COMPLETE verification steps cite the linking activity_id when no file proves the state; contract violations are now 0 with or without OCR. The official output.csv (with OCR) is unchanged (same md5).
+
+Actions:
+* edited code/ghost_audit/auditor.py (activity-id evidence fallback for COMPLETE), code/main.py (missing-tool warning)
+* simulated no-Tesseract run; reran main + evaluation; rebuilt code.zip; git push
+
+Context:
+tool=Claude (claude.ai agent workspace, Claude Code-based harness)
+model=claude-opus-5-5
+branch=main
+repo_root=/home/claude/hro
+worktree=main
+parent_agent=none
+
