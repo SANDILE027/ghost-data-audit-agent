@@ -361,3 +361,22 @@ repo_root=/home/claude/hro
 worktree=main
 parent_agent=none
 
+## [2026-10-25T01:22:00+02:00] Local run now matches after installing Tesseract
+
+User Prompt (verbatim, secrets redacted):
+[terminal output: installed tesseract-ocr, git pull, python3 code/main.py -> INCOMPLETE 352 / COMPLETE 156 / NOT_APPLICABLE 10, 2909 observations; evaluation: samples 32/32 status, 29/32 exact, custom 7/7, contract violations: 0]
+
+Agent Response Summary:
+Confirmed the user's local run now reproduces the submitted results exactly, gave an md5 check to prove the local output.csv is identical, and summarised the files to upload.
+
+Actions:
+* none (verification guidance)
+
+Context:
+tool=Claude (claude.ai agent workspace, Claude Code-based harness)
+model=claude-opus-5-5
+branch=main
+repo_root=/home/claude/hro
+worktree=main
+parent_agent=none
+
