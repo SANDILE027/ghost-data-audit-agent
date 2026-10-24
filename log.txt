@@ -302,3 +302,22 @@ repo_root=/home/claude/hro
 worktree=main
 parent_agent=none
 
+## [2026-10-25T01:09:00+02:00] Claude GitHub App authorized but not installed
+
+User Prompt (verbatim, secrets redacted):
+[screenshot: GitHub Settings > Applications > Claude, "Claude has not been installed on any accounts you have access to"]
+
+Agent Response Summary:
+Explained that Claude is authorized but the GitHub App is not installed on the account, so it cannot reach the new repo; gave the install link (github.com/apps/claude) with steps to install it on SANDILE027 for ghost-data-audit-agent, and warned not to click Revoke access.
+
+Actions:
+* none (guidance only)
+
+Context:
+tool=Claude (claude.ai agent workspace, Claude Code-based harness)
+model=claude-opus-5-5
+branch=main
+repo_root=/home/claude/hro
+worktree=main
+parent_agent=none
+
