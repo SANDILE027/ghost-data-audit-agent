@@ -128,3 +128,22 @@ repo_root=/home/claude/hro
 worktree=main
 parent_agent=none
 
+## [2026-10-25T00:21:00+02:00] Guide through HackerRank submission upload
+
+User Prompt (verbatim, secrets redacted):
+[screenshot of the HackerRank "Upload your code" submission page, step 1 of 3, submission closes in 15:10:05]
+
+Agent Response Summary:
+Walked the user through the three upload steps (code.zip, output.csv, log.txt), noted the deadline shown (~15:30 SAST on 25 Oct), and flagged that the AI interview opens after submission.
+
+Actions:
+* none (guidance only)
+
+Context:
+tool=Claude (claude.ai agent workspace, Claude Code-based harness)
+model=claude-opus-5-5
+branch=main
+repo_root=/home/claude/hro
+worktree=main
+parent_agent=none
+
