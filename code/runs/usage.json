@@ -1,0 +1,11 @@
+{
+  "requests": 518,
+  "rows": [],
+  "total_calls": 0,
+  "total_input": 0,
+  "total_output": 0,
+  "total_tokens": 0,
+  "avg_tokens_per_request": 0.0,
+  "total_cost_usd": 0.0,
+  "cost_per_request_usd": 0.0
+}
