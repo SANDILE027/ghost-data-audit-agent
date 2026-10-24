@@ -18,7 +18,8 @@ import re
 DELETION_CUES = [
     r"\bdelet\w*", r"\beras\w*", r"\bremove (my|the) (account|profile)", r"\bclose (my|this|the) account",
     r"\bclosed? (my )?account", r"permanent(ly)? (account[- ])?delet", r"account[- ]deletion",
-    r"exclus[aã]o", r"\beliminaci[oó]n\b", r"\bsuppression\b", r"\bsupprimer\b", r"\bl[öo]schen\b",
+    r"exclus[aã]o", r"\bexclu[ai]r\b", r"\belimin\w*", r"\bborr\w*", r"\bapag\w*", r"\bsuppr\w*", r"\beffac\w*",
+    r"\bl[öo]sch\w*", r"\bverwijder\w*", r"\bcancel(ar|e|ló)\b.{0,20}\bcuenta\b",
     r"삭제", r"削除", r"удал", r"cancel(ar)? (mi|minha) cuenta",
     r"remove (my|the) profile", r"remove (any )?remaining", r"finish the deletion", r"no longer need this account",
     r"\bdisconnected my account\b", r"\bdeleting my account\b",
@@ -38,9 +39,9 @@ NON_DELETION_PURPOSES = [
 
 def rule_intent(text: str) -> dict:
     t = (text or "").lower()
-    pos = [p for p in DELETION_CUES if re.search(p, t)]
-    neg = [p for p in NEGATIONS if re.search(p, t)]
-    other = [p for p in NON_DELETION_PURPOSES if re.search(p, t)]
+    # keep the words that actually matched (readable audit trail), not the patterns
+    hits = lambda pats: [m.group(0) for p in pats for m in [re.search(p, t)] if m]
+    pos, neg, other = hits(DELETION_CUES), hits(NEGATIONS), hits(NON_DELETION_PURPOSES)
     score = len(pos) - 2 * len(neg) - len(other)
     # The intake queue only receives privacy requests: a follow-up such as "my old profile still
     # appears, remove that too" is a deletion request even without an explicit verb, so the

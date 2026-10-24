@@ -380,3 +380,23 @@ repo_root=/home/claude/hro
 worktree=main
 parent_agent=none
 
+## [2026-10-25T01:25:00+02:00] Add hands-on testing tools (intent tester, case explainer)
+
+User Prompt (verbatim, secrets redacted):
+ohky so since you did test on you own it fine for logs and other stuff i want to run it on my own see if it can detect intent etc like testing
+
+Agent Response Summary:
+Added code/try_intent.py (classify any text, interactive mode, optional --llm comparison, shows the exact words that decided the verdict) and code/explain.py (explain any case or a made-up request: subject, records, states, evidence, steps). Testing surfaced a weakness: Spanish verb forms like "eliminen" were not matched as deletion cues, so the multilingual cue list was broadened (elimin*, borr*, suppr*, effac*, lösch*, ...). Submitted output.csv is unchanged (same md5); evaluation still 0 contract violations.
+
+Actions:
+* created code/try_intent.py, code/explain.py; edited code/ghost_audit/intent.py; updated README.md, code/README.md
+* reran main + evaluation; rebuilt code.zip; git push
+
+Context:
+tool=Claude (claude.ai agent workspace, Claude Code-based harness)
+model=claude-opus-5-5
+branch=main
+repo_root=/home/claude/hro
+worktree=main
+parent_agent=none
+

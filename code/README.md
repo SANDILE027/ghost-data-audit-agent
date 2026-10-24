@@ -23,6 +23,16 @@ python3 code/main.py --llm --vlm
 
 The deterministic engine needs only the Python standard library. Tesseract and pdftotext are used for the 15 screenshot and PDF evidence files. Without them, those files are skipped and everything else still runs.
 
+## Try it yourself
+
+```bash
+python3 code/try_intent.py "Por favor, eliminen mi cuenta"   # intent verdict + the words that decided it
+python3 code/try_intent.py                                    # interactive; add --llm to compare with Claude
+python3 code/explain.py case_11                               # subject, records, states, evidence, steps
+python3 code/explain.py --email novak.tomasz@icloud.com --text "Please erase my account" \
+    --requested 2026-09-09T12:00:00Z --audit 2026-10-01T12:00:00Z  # audit a request you make up
+```
+
 ## Architecture
 
 ```
