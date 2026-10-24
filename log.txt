@@ -264,3 +264,22 @@ repo_root=/home/claude/hro
 worktree=main
 parent_agent=none
 
+## [2026-10-25T00:59:00+02:00] How to test the solution locally in VS Code
+
+User Prompt (verbatim, secrets redacted):
+ohky i need to text on my vs code studio to see if it working
+
+Agent Response Summary:
+Gave step-by-step instructions for running the project locally on Ubuntu in VS Code from the git bundle: install tesseract/poppler, run code/main.py, run the evaluation, and check the expected results (518 rows, status counts, 32/32 status and 29/32 exact on samples, 0 contract violations).
+
+Actions:
+* none (guidance only)
+
+Context:
+tool=Claude (claude.ai agent workspace, Claude Code-based harness)
+model=claude-opus-5-5
+branch=main
+repo_root=/home/claude/hro
+worktree=main
+parent_agent=none
+
