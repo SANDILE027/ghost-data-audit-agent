@@ -186,3 +186,22 @@ repo_root=/home/claude/hro
 worktree=main
 parent_agent=none
 
+## [2026-10-25T00:45:00+02:00] Did the intent stage use a model?
+
+User Prompt (verbatim, secrets redacted):
+so in inten5t you used model?
+
+Agent Response Summary:
+Clarified that the submitted run did not call any model for intent: it used the rule-based multilingual classifier. The Claude classifier (--llm) is implemented and cached but needs ANTHROPIC_API_KEY, which was unavailable; explained how to enable it and what to say in the interview.
+
+Actions:
+* none (explanation only)
+
+Context:
+tool=Claude (claude.ai agent workspace, Claude Code-based harness)
+model=claude-opus-5-5
+branch=main
+repo_root=/home/claude/hro
+worktree=main
+parent_agent=none
+
