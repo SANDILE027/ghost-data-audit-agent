@@ -283,3 +283,22 @@ repo_root=/home/claude/hro
 worktree=main
 parent_agent=none
 
+## [2026-10-25T01:05:00+02:00] Guide user to GitHub App repository access
+
+User Prompt (verbatim, secrets redacted):
+[screenshot: GitHub Settings open on the "Copilot in the cloud" page]
+
+Agent Response Summary:
+Pointed out that the Copilot page is the wrong setting and gave the direct link to Installed GitHub Apps (github.com/settings/installations) with steps to add ghost-data-audit-agent to the Claude app's repository access.
+
+Actions:
+* none (guidance only)
+
+Context:
+tool=Claude (claude.ai agent workspace, Claude Code-based harness)
+model=claude-opus-5-5
+branch=main
+repo_root=/home/claude/hro
+worktree=main
+parent_agent=none
+
