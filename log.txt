@@ -400,3 +400,24 @@ repo_root=/home/claude/hro
 worktree=main
 parent_agent=none
 
+## [2026-10-25T02:32:00+02:00] Expand study guide for beginners and export PDF
+
+User Prompt (verbatim, secrets redacted):
+so now i want to expand he document you created act like you are explaing to people who know nothing what is happening saying problem withexample the down to solutions with example in more details then create  pdf document for me so i will study before i submit
+
+Agent Response Summary:
+Rewrote the Claude Doc as a beginner study guide: plain-language story, a glossary of 12 terms, seven real dataset cases illustrating the problem, the required output with an example, each solution stage with what/why/example, a table of traps and fixes, eight interview questions with model answers, and a hands-on checklist. Verified the cited cases with explain.py, then exported the doc as a 12-page A4 PDF.
+
+Actions:
+* Claude Docs updates (planted and filled 8 sections, removed superseded sections, retitled)
+* python3 code/explain.py case_05 case_534 (fact check)
+* exported PDF -> Ghost_Data_Audit_Agent_Study_Guide.pdf
+
+Context:
+tool=Claude (claude.ai agent workspace, Claude Code-based harness)
+model=claude-opus-5-5
+branch=main
+repo_root=/home/claude/hro
+worktree=main
+parent_agent=none
+
